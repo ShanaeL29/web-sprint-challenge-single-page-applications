@@ -2,10 +2,13 @@ import React from "react";
 
 export default function PizzaForm(props) {
   const { values, submit, change, disabled, errors } = props;
-
+  const button = document.getElementById("order-button");
   const onSubmit = (event) => {
     event.preventDefault();
     submit();
+    button.addEventListener("click", function () {
+      prompt("Success");
+    });
   };
 
   const onChange = (event) => {
@@ -65,6 +68,7 @@ export default function PizzaForm(props) {
       <label>Choice of Sauce</label>
       <label>
         <input
+          id="radio1"
           type="radio"
           name="sauce"
           value="originalRed"
@@ -75,6 +79,7 @@ export default function PizzaForm(props) {
       </label>
       <label>
         <input
+          id="radio2"
           type="radio"
           name="sauce"
           value="garlicRanch"
@@ -85,6 +90,7 @@ export default function PizzaForm(props) {
       </label>
       <label>
         <input
+          id="radio3"
           type="radio"
           name="sauce"
           value="bbq"
@@ -95,6 +101,7 @@ export default function PizzaForm(props) {
       </label>
       <label>
         <input
+          id="radio4"
           type="radio"
           name="sauce"
           value="spinachAlfredo"
