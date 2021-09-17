@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import Homepage from "./Homepage";
 import PizzaForm from "./PizzaForm";
-// import Orders from "./Orders";
 import Order from "./Order";
 import schema from "./validation/pizzaFormSchema";
 import axios from "axios";
