@@ -26,10 +26,6 @@ function Order({ details }) {
       <p>{details.special}</p>
       <p>{details.quantity}</p>
     </div>
-
-    //   <h1>Order Confirmation</h1>
-    //   <p>{JSON.stringify(details)}</p>
-    // </div>
   );
 }
 

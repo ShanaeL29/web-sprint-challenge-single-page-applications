@@ -2,13 +2,13 @@ import React from "react";
 
 export default function PizzaForm(props) {
   const { values, submit, change, disabled, errors } = props;
-  const button = document.getElementById("order-button");
+  // const button = document.getElementById("order-button");
   const onSubmit = (event) => {
     event.preventDefault();
     submit();
-    button.addEventListener("click", function () {
-      prompt("Success");
-    });
+    // button.addEventListener("click", function () {
+    //   prompt("Success");
+    // });
   };
 
   const onChange = (event) => {
@@ -27,6 +27,7 @@ export default function PizzaForm(props) {
       <h1>Build Your Own Pizza</h1>
       <div>
         <img
+          className="pizza"
           src="https://images.squarespace-cdn.com/content/v1/52cf5852e4b0c1274ad7d85c/1427664439482-0HKP7K78UFF5YZD8M0B6/Uncle-Maddios-heart.jpg"
           alt="A visual of a woman puttin sauce on pizza dough in the shape of a heart"
         />

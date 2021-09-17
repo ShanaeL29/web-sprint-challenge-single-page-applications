@@ -82,51 +82,49 @@ export default function App() {
 
   const formSubmit = () => {
     const testOrder = {
-      // Initial method but did not list toppings as booleans...
-      //   name: pizzaFormValues.name.trim(),
-      //   size: pizzaFormValues.size,
-      //   sauce: pizzaFormValues.sauce.trim(),
-      //   toppings: [
-      //     "pepperoni",
-      //     "sausage",
-      //     "canadianBacon",
-      //     "spicyItalianSausage",
-      //     "grilledChicken",
-      //     "mushrooms",
-      //     "bananaPeppers",
-      //     "onions",
-      //     "greenPeppers",
-      //     "dicedTomatoes",
-      //     "blackOlives",
-      //     "roastedGarlic",
-      //     "artichokeHearts",
-      //     "threeCheese",
-      //     "pineapple",
-      //     "extraCheese",
-      //   ].filter((topping) => !!pizzaFormValues[topping]),
-      //   glutenFree: pizzaFormValues.glutenFree,
-      //   special: pizzaFormValues.special,
-      //   quantity: pizzaFormValues.quantity,
-      // };
+      // name: pizzaFormValues.name.trim(),
+      // size: pizzaFormValues.size,
+      // sauce: pizzaFormValues.sauce.trim(),
+      // pepperoni: pizzaFormValues.pepperoni,
+      // sausage: pizzaFormValues.sausage,
+      // canadianBacon: pizzaFormValues.canadianBacon,
+      // spicyItalianSausage: pizzaFormValues.spicyItalianSausage,
+      // grilledChicken: pizzaFormValues.grilledChicken,
+      // mushrooms: pizzaFormValues.mushrooms,
+      // bananaPeppers: pizzaFormValues.bananaPeppers,
+      // onions: pizzaFormValues.onions,
+      // greenPeppers: pizzaFormValues.greenPeppers,
+      // dicedTomatoes: pizzaFormValues.dicedTomatoes,
+      // blackOlives: pizzaFormValues.blackOlives,
+      // roastedGarlic: pizzaFormValues.roastedGarlic,
+      // artichokeHearts: pizzaFormValues.artichokeHearts,
+      // threeCheese: pizzaFormValues.threeCheese,
+      // pineapple: pizzaFormValues.pineapple,
+      // extraCheese: pizzaFormValues.extraCheese,
+      // glutenFree: pizzaFormValues.glutenFree,
+      // special: pizzaFormValues.special,
+      // quantity: pizzaFormValues.quantity,
       name: pizzaFormValues.name.trim(),
       size: pizzaFormValues.size,
       sauce: pizzaFormValues.sauce.trim(),
-      pepperoni: pizzaFormValues.pepperoni,
-      sausage: pizzaFormValues.sausage,
-      canadianBacon: pizzaFormValues.canadianBacon,
-      spicyItalianSausage: pizzaFormValues.spicyItalianSausage,
-      grilledChicken: pizzaFormValues.grilledChicken,
-      mushrooms: pizzaFormValues.mushrooms,
-      bananaPeppers: pizzaFormValues.bananaPeppers,
-      onions: pizzaFormValues.onions,
-      greenPeppers: pizzaFormValues.greenPeppers,
-      dicedTomatoes: pizzaFormValues.dicedTomatoes,
-      blackOlives: pizzaFormValues.blackOlives,
-      roastedGarlic: pizzaFormValues.roastedGarlic,
-      artichokeHearts: pizzaFormValues.artichokeHearts,
-      threeCheese: pizzaFormValues.threeCheese,
-      pineapple: pizzaFormValues.pineapple,
-      extraCheese: pizzaFormValues.extraCheese,
+      toppings: [
+        "pepperoni",
+        "sausage",
+        "canadianBacon",
+        "spicyItalianSausage",
+        "grilledChicken",
+        "mushrooms",
+        "bananaPeppers",
+        "onions",
+        "greenPeppers",
+        "dicedTomatoes",
+        "blackOlives",
+        "roastedGarlic",
+        "artichokeHearts",
+        "threeCheese",
+        "pineapple",
+        "extraCheese",
+      ].filter((topping) => !!pizzaFormValues[topping]),
       glutenFree: pizzaFormValues.glutenFree,
       special: pizzaFormValues.special,
       quantity: pizzaFormValues.quantity,
@@ -140,8 +138,11 @@ export default function App() {
 
   return (
     <div className="App">
+      {orders.map((order) => {
+        return <Order key={order.name} details={order} />;
+      })}
       <Switch>
-        <Route exact path="/pizza">
+        <Route path="/pizza">
           <PizzaForm
             values={pizzaFormValues}
             change={inputChange}
@@ -150,9 +151,6 @@ export default function App() {
             errors={pizzaFormErrors}
           />
         </Route>
-        {orders.map((order) => {
-          return <Order key={order.name} details={order} />;
-        })}
         <Route exact path="/">
           <Homepage />
         </Route>

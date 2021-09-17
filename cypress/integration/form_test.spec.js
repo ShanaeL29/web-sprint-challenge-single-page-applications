@@ -88,13 +88,6 @@ describe("Sprint Challenge Single Page Applications", () => {
       quantity().should("have.value", "").type(3).should("have.value", 3);
     });
 
-    // it("Can select the radio buttons only one at a time", () => {
-    //   sauce().should("be.checked");
-    //   sauce().should("not.be.checked");
-    //   sauce().should("not.be.checked");
-    //   sauce().should("not.be.checked");
-    // });
-
     it("Can select multiple toppings", () => {
       pepperoni().check().should("have.value", "on");
       sausage().check().should("have.value", "on");
@@ -126,13 +119,11 @@ describe("Sprint Challenge Single Page Applications", () => {
       name().type("Shanae");
       size().select("Medium");
       sauce().check({ multiple: true });
-      //   sauce().first().check().should("have.value", "originalRed");
       quantity().type(5);
       orderButton().click();
       name().should("have.value", "");
       size().should("have.value", "");
-      //   sauce().should("have.value", { multiple: "" });
-      //   quantity().should("have.value", "");
+      quantity().should("have.value", "");
     });
   });
 });

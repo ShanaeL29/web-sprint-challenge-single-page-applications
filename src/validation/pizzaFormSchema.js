@@ -6,7 +6,7 @@ const pizzaFormSchema = yup.object().shape({
     .trim()
     .required("name must be at least 2 characters")
     .min(2, "name must be at least 2 characters"),
-  size: yup.string().required("Required"),
+  size: yup.string().required("Size is required"),
   sauce: yup.string(),
   pepperoni: yup.boolean(),
   sausage: yup.boolean(),
@@ -26,7 +26,6 @@ const pizzaFormSchema = yup.object().shape({
   extraCheese: yup.boolean(),
   glutenFree: yup.boolean(),
   special: yup.string(),
-  // quantity: yup.number().positive().required("Must be 1 or more"),
   quantity: yup.number().positive(),
 });
 
