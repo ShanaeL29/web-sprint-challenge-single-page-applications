@@ -33,8 +33,16 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question.
 
 1. In 1-2 sentences, explain what React's `useRouteMatch` hook is used for.
+
+   React's useRouteMatch hook allows you to add nested routes to your application so that a single parameter can be changed in a URL without having to change the entire URL, this way you can have multiple URLs with only one specified route in your code. For example if we have two URLs abc.com/about/person1/person-details and abc.com/about/person2/person-details can use const {path, url} = useRouteMatch() to link to {`${url}/employee-details` with the {url} replacing the redundant links and a <Route path = {`${path}/employee-details`}>/
+
 1. How would you explain form validation to someone who has never programmed before?
+
+   In order to explain form validation to someone who has never programmed before I would first give an everyday example so they can relate. For example, when you set a password and you get a response that the password must require a capital letter and a special character or else the password will not be accepted. Then I would explain that in order to validate a form we declare a set of rules/outline of what the form should look like, known as a schema, and then we can use a library to handle the validation for us. The schema will tell the library what the existing fields are and how they should be validated. Essentially, form validation is a very important part of web development, through which we can restrict invalid entries and validate user details in some extent by using valid sets of checkpoints or validation rules.
+
 1. In 1-2 sentences, define end to end testing.
+
+   End to end testing refers to a testing method that tests an application's workflow from beginning to end. End to end testing aims to replicate real user scenarios so that the system can be validated for integration and data integrity. The test goes through every operation the application can perform in order to test how the application communicates with things like external dependencies, databases, network connectivity, and other applications.
 
 ## Instructions
 
